@@ -1,213 +1,166 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NovaTrade Logistics | Soluciones Logísticas Internacionales</title>
-  <meta name="description" content="NovaTrade Logistics ofrece soluciones logísticas integrales para importación y exportación de carga internacional." />
-
-  <!-- Preparado para versión bilingüe futura -->
-  <meta name="language" content="es" />
+  <meta charset="UTF-8">
+  <title>NovaTrade Logistics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color: #1f2933;
-      line-height: 1.6;
+      background-color: #f4f6f8;
+      color: #333;
     }
 
     header {
-      background: #0f172a;
-      color: #ffffff;
-      padding: 20px 40px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      background-color: #ffffff;
+      padding: 15px 40px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    header img {
+      height: 60px;
     }
 
     nav {
+      margin-left: auto;
       display: flex;
-      justify-content: space-between;
       align-items: center;
     }
 
-    nav a {
-      color: #ffffff;
+    nav button {
+      background: none;
+      border: none;
       margin-left: 20px;
-      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: #003366;
       font-weight: bold;
+    }
+
+    nav button:hover {
+      text-decoration: underline;
+    }
+
+    .lang-switch {
+      margin-left: 30px;
       font-size: 14px;
     }
 
-    .hero {
-      background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)), url('https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55');
-      background-size: cover;
-      background-position: center;
-      color: #ffffff;
-      padding: 100px 40px;
-      text-align: center;
+    .lang-switch button {
+      font-size: 14px;
+      margin-left: 5px;
     }
 
-    .hero h1 {
-      font-size: 40px;
-      margin-bottom: 20px;
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
-    .hero p {
-      font-size: 18px;
-      max-width: 800px;
-      margin: 0 auto 30px auto;
-    }
-
-    .btn {
-      background: #2563eb;
-      color: #ffffff;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 80px 40px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    section h2 {
-      font-size: 30px;
-      margin-bottom: 20px;
-      color: #0f172a;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .card {
-      background: #f8fafc;
+    .section {
+      display: none;
+      background-color: #ffffff;
       padding: 30px;
       border-radius: 6px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
+    .section.active {
+      display: block;
+    }
+
+    h1, h2 {
+      color: #003366;
+    }
+
     footer {
-      background: #0f172a;
-      color: #ffffff;
-      padding: 40px;
+      margin-top: 60px;
+      padding: 20px;
       text-align: center;
       font-size: 14px;
-    }
-
-    footer a {
-      color: #93c5fd;
-      text-decoration: none;
-    }
-
-    .lang-placeholder {
-      font-size: 12px;
-      opacity: 0.8;
+      color: #777;
     }
   </style>
 </head>
+
 <body>
 
 <header>
-  <nav>
-    <strong>NovaTrade Logistics</strong>
-    <div>
-      <a href="#inicio">Inicio</a>
-      <a href="#nosotros">Quiénes Somos</a>
-      <a href="#servicios">Servicios</a>
-<p>
-  En NovaTrade Logistics ofrecemos servicios integrales de gestión logística internacional,
-  orientados a operaciones de importación, exportación y tránsito,
-  brindando coordinación, seguimiento y asesoría durante todo el proceso.
-</p>
+  <img src="logo.png" alt="NovaTrade Logistics">
 
-      <a href="#proceso">Cómo Trabajamos</a>
-      <a href="#contacto">Contacto</a>
+  <nav>
+    <button onclick="showSection('inicio')">Inicio</button>
+    <button onclick="showSection('servicios')">Servicios</button>
+    <button onclick="showSection('nosotros')">Nosotros</button>
+    <button onclick="showSection('contacto')">Contacto</button>
+
+    <div class="lang-switch">
+      <button onclick="setLanguage('es')">ES</button> |
+      <button onclick="setLanguage('en')">EN</button>
     </div>
   </nav>
 </header>
 
-<a id="inicio"></a>
-<div class="hero">
-  <h1>Soluciones Logísticas Internacionales</h1>
-  <p>Gestionamos y ejecutamos operaciones de importación y exportación con un enfoque integral, eficiente y confiable.</p>
-  <a class="btn" href="#contacto">Solicitar información</a>
-  <div class="lang-placeholder">English version coming soon</div>
+<div class="container">
+
+  <div id="inicio" class="section active">
+    <h1 data-es="Bienvenidos a NovaTrade Logistics"
+        data-en="Welcome to NovaTrade Logistics"></h1>
+    <p data-es="Somos una empresa enfocada en brindar soluciones eficientes en gestión logística internacional, actuando como un único punto de contacto para nuestros clientes."
+       data-en="We are a company focused on providing efficient international logistics management solutions, acting as a single point of contact for our clients."></p>
+  </div>
+
+  <div id="servicios" class="section">
+    <h2 data-es="Servicios"
+        data-en="Services"></h2>
+    <p data-es="Ofrecemos servicios integrales de gestión logística internacional para operaciones de importación, exportación y tránsito, brindando coordinación, tracking y asesoría durante todo el proceso."
+       data-en="We provide comprehensive international logistics management services for import, export, and transit operations, offering coordination, tracking, and advisory support throughout the process."></p>
+  </div>
+
+  <div id="nosotros" class="section">
+    <h2 data-es="Quiénes Somos"
+        data-en="About Us"></h2>
+    <p data-es="NovaTrade Logistics acompaña a empresas y personas en sus operaciones de comercio internacional mediante una gestión profesional, clara y confiable."
+       data-en="NovaTrade Logistics supports companies and individuals in their international trade operations through professional, clear, and reliable management."></p>
+  </div>
+
+  <div id="contacto" class="section">
+    <h2 data-es="Contacto"
+        data-en="Contact"></h2>
+    <p>
+      <strong>Email:</strong> novaatradelogistics@gmail.com<br>
+      <strong>WhatsApp:</strong> (+502) 5471-8568
+    </p>
+  </div>
+
 </div>
 
-<a id="nosotros"></a>
-<section>
-  <h2>Quiénes Somos</h2>
-  <p>
-    En <strong>NovaTrade Logistics</strong> somos una empresa especializada en la <strong>gestión logística internacional</strong>, orientada a brindar soluciones completas para importadores y exportadores.
-  </p>
-  <p>
-    Nos encargamos de planificar, coordinar y supervisar cada etapa del proceso logístico, asegurando operaciones eficientes, controladas y alineadas a los objetivos comerciales de nuestros clientes.
-  </p>
-</section>
-
-<a id="servicios"></a>
-<section>
-  <h2>Servicios</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Gestión de Importaciones y Exportaciones</h3>
-      <p>Administramos operaciones logísticas completas, desde el origen hasta el destino final.</p>
-    </div>
-    <div class="card">
-      <h3>Transporte Internacional</h3>
-      <p>Soluciones de carga marítima, aérea y terrestre adaptadas a cada tipo de mercancía.</p>
-    </div>
-    <div class="card">
-      <h3>Servicios Logísticos Integrales</h3>
-      <p>Seguimiento, control documental y acompañamiento durante todo el proceso.</p>
-    </div>
-  </div>
-</section>
-
-<a id="proceso"></a>
-<section>
-  <h2>Cómo Trabajamos</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>1. Análisis</h3>
-      <p>Evaluamos la operación y definimos la mejor estrategia logística.</p>
-    </div>
-    <div class="card">
-      <h3>2. Planificación</h3>
-      <p>Diseñamos la solución logística más eficiente según los requerimientos del cliente.</p>
-    </div>
-    <div class="card">
-      <h3>3. Ejecución</h3>
-      <p>Coordinamos y supervisamos la operación logística de principio a fin.</p>
-    </div>
-    <div class="card">
-      <h3>4. Seguimiento</h3>
-      <p>Mantenemos control y comunicación constante hasta la finalización del servicio.</p>
-    </div>
-  </div>
-</section>
-
-<a id="contacto"></a>
-<section>
-  <h2>Contacto</h2>
-  <p>¿Buscas un aliado logístico confiable para tus operaciones internacionales? Contáctanos.</p>
-  <p><strong>Correo:</strong> info@novatradelogistics.com<br>
-     <strong>WhatsApp:</strong> +502 XXXXXXXX<br>
-     <strong>Ubicación:</strong> Guatemala</p>
-</section>
-
-<footer>
-  <p>© 2025 NovaTrade Logistics. Todos los derechos reservados.</p>
-  <p>Soluciones logísticas internacionales para comercio global.</p>
+<footer data-es="© 2025 NovaTrade Logistics · Gestión logística internacional"
+        data-en="© 2025 NovaTrade Logistics · International logistics management">
 </footer>
+
+<script>
+  function showSection(sectionId) {
+    document.querySelectorAll('.section').forEach(section => {
+      section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
+  }
+
+  function setLanguage(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-es]').forEach(el => {
+      el.textContent = el.getAttribute('data-' + lang);
+    });
+  }
+
+  // Idioma por defecto: Español
+  setLanguage('es');
+</script>
 
 </body>
 </html>
