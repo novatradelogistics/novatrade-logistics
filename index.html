@@ -15,7 +15,6 @@
       color: #333;
     }
 
-    /* ===== MARCA DE AGUA ===== */
     .watermark {
       position: fixed;
       inset: 0;
@@ -37,13 +36,9 @@
       z-index: 10;
     }
 
-    header img {
-      height: 60px;
-    }
+    header img { height: 60px; }
 
-    nav {
-      margin-left: auto;
-    }
+    nav { margin-left: auto; }
 
     nav a, nav button {
       margin-left: 20px;
@@ -56,9 +51,7 @@
       font-size: 15px;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
+    nav a:hover { text-decoration: underline; }
 
     .container {
       max-width: 1000px;
@@ -76,9 +69,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
-    h1, h2 {
-      color: #003366;
-    }
+    h1, h2 { color: #003366; }
 
     footer {
       text-align: center;
@@ -87,6 +78,8 @@
       background: #ffffff;
       border-top: 1px solid #ddd;
     }
+
+    ul { margin-top: 15px; padding-left: 20px; }
   </style>
 </head>
 
@@ -113,12 +106,28 @@
     <p id="p1">
       Somos una empresa especializada en la gestión logística internacional, orientada a facilitar operaciones de importación, exportación y tránsito de mercancías.
     </p>
+    <p id="p1b">
+      Nuestro compromiso es brindar soluciones confiables y adaptadas a las necesidades de cada cliente, garantizando procesos ágiles y seguros en cada etapa de la cadena de suministro.
+    </p>
+    <p id="p1c">
+      Con presencia en mercados estratégicos y un equipo altamente capacitado, NovaTrade Logistics se posiciona como un aliado clave para empresas que buscan expandir sus operaciones internacionales.
+    </p>
   </section>
 
   <section id="servicios">
     <h2 id="t2">Servicios</h2>
     <p id="p2">
       Brindamos soluciones integrales en gestión logística internacional, asegurando control, eficiencia y cumplimiento durante todo el proceso.
+    </p>
+    <ul id="p2list">
+      <li><strong>Gestión aduanera:</strong> Clasificación arancelaria, trámites de importación y exportación, cumplimiento normativo en Guatemala y Centroamérica.</li>
+      <li><strong>Transporte internacional:</strong> Coordinación de envíos marítimos, aéreos y terrestres con cobertura global.</li>
+      <li><strong>Almacenaje y distribución:</strong> Manejo de inventarios, bodegas seguras y distribución eficiente.</li>
+      <li><strong>Consultoría en comercio exterior:</strong> Asesoría en regulaciones, tratados comerciales y optimización de costos.</li>
+      <li><strong>Gestión documental:</strong> Preparación y control de documentos legales y corporativos para operaciones internacionales.</li>
+    </ul>
+    <p id="p2b">
+      Cada servicio está diseñado para ofrecer tranquilidad y confianza, permitiendo que nuestros clientes se concentren en el crecimiento de su negocio mientras nosotros nos encargamos de la logística.
     </p>
   </section>
 
@@ -127,6 +136,17 @@
     <p id="p3">
       NovaTrade Logistics acompaña a sus clientes como punto único de contacto en sus operaciones logísticas internacionales, ofreciendo asesoría y gestión profesional.
     </p>
+    <p id="p3b">
+      Nuestra misión es simplificar la logística internacional, conectando mercados y personas mediante procesos eficientes y transparentes. Creemos en la innovación, la responsabilidad y la excelencia como pilares fundamentales de nuestro trabajo.
+    </p>
+    <p id="p3c">
+      Con años de experiencia en comercio exterior y un equipo multidisciplinario, hemos construido relaciones sólidas con autoridades aduaneras, proveedores y clientes en distintos países.
+    </p>
+    <ul id="p3list">
+      <li><strong>Visión:</strong> Ser líderes en soluciones logísticas internacionales en Centroamérica.</li>
+      <li><strong>Misión:</strong> Facilitar el comercio global con servicios confiables y personalizados.</li>
+      <li><strong>Valores:</strong> Transparencia, compromiso, innovación y orientación al cliente.</li>
+    </ul>
   </section>
 
   <section id="contacto">
@@ -134,6 +154,13 @@
     <p id="p4">
       Email: novaatradelogistics@gmail.com<br>
       WhatsApp: (+502) 5471-8568
+    </p>
+    <p id="p4b">
+      Nuestro equipo está disponible para atender consultas, cotizaciones y asesorías personalizadas. Escríbenos y descubre cómo podemos ayudarte a optimizar tus operaciones internacionales.
+    </p>
+    <p id="p4c">
+      <strong>Dirección:</strong> Ciudad de Guatemala, Zona 21<br>
+      <strong>Horario:</strong> Lunes a Viernes de 8:00 a 18:00 horas
     </p>
   </section>
 
@@ -147,21 +174,20 @@
   function langEN() {
     document.getElementById("t1").innerText = "Welcome to NovaTrade Logistics";
     document.getElementById("p1").innerText = "We are a company specialized in international logistics management, facilitating import, export and transit operations.";
+    document.getElementById("p1b").innerText = "Our commitment is to provide reliable solutions tailored to each client, ensuring agile and secure processes throughout the supply chain.";
+    document.getElementById("p1c").innerText = "With presence in strategic markets and a highly trained team, NovaTrade Logistics positions itself as a key partner for companies seeking to expand their international operations.";
+
     document.getElementById("t2").innerText = "Services";
-    document.getElementById("p2").innerText = "We provide comprehensive international logistics management solutions.";
+    document.getElementById("p2").innerText = "We provide comprehensive international logistics management solutions, ensuring control, efficiency and compliance throughout the process.";
+    document.getElementById("p2list").innerHTML = `
+      <li><strong>Customs management:</strong> Tariff classification, import/export procedures, regulatory compliance in Guatemala and Central America.</li>
+      <li><strong>International transport:</strong> Coordination of maritime, air and land shipments with global coverage.</li>
+      <li><strong>Warehousing and distribution:</strong> Inventory management, secure warehouses and efficient distribution.</li>
+      <li><strong>Foreign trade consulting:</strong> Advisory on regulations, trade agreements and cost optimization.</li>
+      <li><strong>Document management:</strong> Preparation and control of legal and corporate documents for international operations.</li>`;
+    document.getElementById("p2b").innerText = "Each service is designed to provide peace of mind and confidence, allowing our clients to focus on growing their business while we take care of logistics.";
+
     document.getElementById("t3").innerText = "About Us";
-    document.getElementById("p3").innerText = "NovaTrade Logistics acts as your single point of contact for international logistics operations.";
-    document.getElementById("t4").innerText = "Contact";
-  }
-
-  function langES() {
-    location.reload();
-  }
-
-  window.onload = function () {
-    window.scrollTo(0, 0);
-  };
-</script>
-
-</body>
-</html>
+    document.getElementById("p3").innerText = "NovaTrade Logistics acts as your single point of contact for international logistics operations, offering professional advice and management.";
+    document.getElementById("p3b").innerText = "Our mission is to simplify international logistics, connecting markets and people through efficient and transparent processes. We believe in innovation, responsibility and excellence as fundamental pillars of our work.";
+    document.getElementById("p3c").innerText = "With years of experience in foreign trade and a
