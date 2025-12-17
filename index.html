@@ -1,51 +1,165 @@
-<script>
-  function langEN() {
-    document.getElementById("t1").innerText =
-      "Welcome to NovaTrade Logistics";
-    document.getElementById("p1").innerText =
-      "We are a company specialized in international logistics management, facilitating import, export and transit operations.";
-    document.getElementById("p1b").innerText =
-      "Our commitment is to provide reliable solutions tailored to each client, ensuring agile and secure processes throughout the supply chain.";
-    document.getElementById("p1c").innerText =
-      "With presence in strategic markets and a highly trained team, NovaTrade Logistics positions itself as a key partner for companies seeking to expand their international operations.";
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>NovaTrade Logistics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    document.getElementById("t2").innerText = "Services";
-    document.getElementById("p2").innerText =
-      "We provide comprehensive international logistics management solutions, ensuring control, efficiency and compliance throughout the process.";
-    document.getElementById("p2list").innerHTML = `
-      <li><strong>Customs management:</strong> Tariff classification, import/export procedures and regulatory compliance in Guatemala and Central America.</li>
-      <li><strong>International transport:</strong> Coordination of maritime, air and land shipments with global coverage.</li>
-      <li><strong>Foreign trade consulting:</strong> Advisory on regulations, trade agreements and cost optimization.</li>
-      <li><strong>Document management:</strong> Control and administration of logistics documents ensuring traceability and efficiency.</li>`;
-    document.getElementById("p2b").innerText =
-      "Each service is designed to provide peace of mind and confidence, allowing our clients to focus on growing their business while we take care of logistics.";
+<style>
+html { scroll-behavior: smooth; }
 
-    document.getElementById("t3").innerText = "About Us";
-    document.getElementById("p3").innerText =
-      "NovaTrade Logistics acts as your single point of contact for international logistics operations, offering professional advice and management.";
-    document.getElementById("p3b").innerText =
-      "Our mission is to simplify international logistics, connecting markets and people through efficient and transparent processes.";
-    document.getElementById("p3c").innerText =
-      "With years of experience in foreign trade and a multidisciplinary team, we have built strong relationships with customs authorities, providers and clients in different countries.";
-    document.getElementById("p3list").innerHTML = `
-      <li><strong>Vision:</strong> To be leaders in international logistics solutions in Central America.</li>
-      <li><strong>Mission:</strong> Facilitate global trade with reliable and personalized services.</li>
-      <li><strong>Values:</strong> Transparency, commitment, innovation and customer orientation.</li>`;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
 
-    document.getElementById("t4").innerText = "Contact";
-    document.getElementById("p4").innerHTML =
-      "Email: novaatradelogistics@gmail.com<br>WhatsApp: (+502) 5471-8568";
-    document.getElementById("p4b").innerText =
-      "Our team is available to assist you with inquiries, quotations and personalized advisory services.";
-    document.getElementById("p4c").innerHTML =
-      "<strong>Address:</strong> Guatemala City, Zone 12 <br><strong>Business hours:</strong> Monday to Friday, 8:00 AM – 6:00 PM";
-  }
+.watermark {
+  position: fixed;
+  inset: 0;
+  background: url("logo-novatrade.png") no-repeat center;
+  background-size: 700px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
 
-  function langES() {
-    location.reload();
-  }
+header {
+  background: #ffffff;
+  padding: 15px 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-  window.onload = function () {
-    window.scrollTo(0, 0);
-  };
-</script>
+header img { height: 60px; }
+
+nav { margin-left: auto; }
+
+nav a, nav button {
+  margin-left: 20px;
+  background: none;
+  border: none;
+  font-weight: bold;
+  color: #003366;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+nav a:hover { text-decoration: underline; }
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  position: relative;
+  z-index: 5;
+}
+
+section {
+  background: #ffffff;
+  padding: 40px;
+  margin-bottom: 40px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+h1, h2 { color: #003366; }
+
+footer {
+  text-align: center;
+  padding: 25px;
+  font-size: 14px;
+  background: #ffffff;
+  border-top: 1px solid #ddd;
+}
+
+ul { padding-left: 20px; }
+</style>
+</head>
+
+<body>
+
+<div class="watermark"></div>
+
+<header>
+  <img src="logo-novatrade.png" alt="NovaTrade Logistics">
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+    <button onclick="setLang('es')">ES</button>
+    <button onclick="setLang('en')">EN</button>
+  </nav>
+</header>
+
+<div class="container">
+
+<!-- INICIO -->
+<section id="inicio">
+<h1
+data-es="Bienvenidos a NovaTrade Logistics"
+data-en="Welcome to NovaTrade Logistics"></h1>
+
+<p
+data-es="Somos una empresa especializada en la gestión logística internacional, orientada a facilitar operaciones de importación, exportación y tránsito de mercancías."
+data-en="We are a company specialized in international logistics management, facilitating import, export and transit operations."></p>
+
+<p
+data-es="Nuestro compromiso es brindar soluciones confiables y adaptadas a las necesidades de cada cliente, garantizando procesos ágiles y seguros en cada etapa de la cadena de suministro."
+data-en="Our commitment is to provide reliable solutions tailored to each client, ensuring agile and secure processes throughout the supply chain."></p>
+
+<p
+data-es="Con presencia en mercados estratégicos y un equipo altamente capacitado, NovaTrade Logistics se posiciona como un aliado clave para empresas que buscan expandir sus operaciones internacionales."
+data-en="With presence in strategic markets and a highly trained team, NovaTrade Logistics positions itself as a key partner for companies seeking to expand their international operations."></p>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+<h2 data-es="Servicios" data-en="Services"></h2>
+
+<p
+data-es="Brindamos soluciones integrales en gestión logística internacional, asegurando control, eficiencia y cumplimiento durante todo el proceso."
+data-en="We provide comprehensive international logistics management solutions, ensuring control, efficiency and compliance throughout the process."></p>
+
+<ul>
+<li data-es="Gestión aduanera: Clasificación arancelaria, trámites de importación y exportación y cumplimiento normativo."
+    data-en="Customs management: Tariff classification, import/export procedures and regulatory compliance."></li>
+<li data-es="Transporte internacional: Coordinación de envíos marítimos, aéreos y terrestres con cobertura global."
+    data-en="International transport: Coordination of maritime, air and land shipments with global coverage."></li>
+<li data-es="Consultoría en comercio exterior: Asesoría en regulaciones y optimización de costos."
+    data-en="Foreign trade consulting: Advisory on regulations and cost optimization."></li>
+<li data-es="Gestión documental: Control y administración de documentos logísticos."
+    data-en="Document management: Control and administration of logistics documents."></li>
+</ul>
+
+<p
+data-es="Cada servicio está diseñado para ofrecer tranquilidad y confianza."
+data-en="Each service is designed to provide peace of mind and confidence."></p>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+<h2 data-es="Quiénes Somos" data-en="About Us"></h2>
+
+<p
+data-es="NovaTrade Logistics acompaña a sus clientes como punto único de contacto en sus operaciones logísticas internacionales."
+data-en="NovaTrade Logistics acts as a single point of contact for international logistics operations."></p>
+
+<p
+data-es="Nuestra misión es simplificar la logística internacional mediante procesos eficientes y transparentes."
+data-en="Our mission is to simplify international logistics through efficient and transparent processes."></p>
+
+<ul>
+<li data-es="Visión: Ser líderes en soluciones logísticas internacionales en Centroamérica."
+    data-en="Vision: To be leaders in international logistics solutions in Central America."></li>
+<li data-es="Misión: Facilitar el comercio global con servicios confiables."
+    data-en="Mission: Facilitate global trade with reliable services."></li>
+<li data-es="Valores: Transparencia, compromiso e innovación."
+    data-en="Values: Transparency
