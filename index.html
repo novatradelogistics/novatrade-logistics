@@ -6,33 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       background-color: #f4f6f8;
       color: #333;
-      line-height: 1.6;
     }
 
-    /* ===== MARCA DE AGUA ÚNICA ===== */
+    /* ===== MARCA DE AGUA ===== */
     .watermark {
       position: fixed;
       inset: 0;
-      background-image: url("logo-novatrade.png");
-      background-repeat: no-repeat;
+      background: url("logo-novatrade.png") no-repeat center;
       background-size: 700px;
-      background-position: center;
       opacity: 0.05;
       pointer-events: none;
-      z-index: 1;
+      z-index: 0;
     }
 
     header {
-      background-color: #ffffff;
+      background: #ffffff;
       padding: 15px 40px;
       display: flex;
       align-items: center;
@@ -52,29 +47,29 @@
 
     nav a, nav button {
       margin-left: 20px;
-      font-size: 15px;
-      color: #003366;
-      font-weight: bold;
-      text-decoration: none;
       background: none;
       border: none;
+      font-weight: bold;
+      color: #003366;
       cursor: pointer;
+      text-decoration: none;
+      font-size: 15px;
     }
 
-    nav a:hover, nav button:hover {
+    nav a:hover {
       text-decoration: underline;
     }
 
     .container {
       max-width: 1000px;
-      margin: 50px auto;
-      padding: 0 20px;
+      margin: 40px auto;
+      padding: 20px;
       position: relative;
       z-index: 5;
     }
 
     section {
-      background-color: #ffffff;
+      background: #ffffff;
       padding: 40px;
       margin-bottom: 40px;
       border-radius: 6px;
@@ -84,3 +79,89 @@
     h1, h2 {
       color: #003366;
     }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: 14px;
+      background: #ffffff;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="watermark"></div>
+
+<header>
+  <img src="logo-novatrade.png" alt="NovaTrade Logistics">
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+    <button onclick="langES()">ES</button>
+    <button onclick="langEN()">EN</button>
+  </nav>
+</header>
+
+<div class="container">
+
+  <section id="inicio">
+    <h1 id="t1">Bienvenidos a NovaTrade Logistics</h1>
+    <p id="p1">
+      Somos una empresa especializada en la gestión logística internacional, orientada a facilitar operaciones de importación, exportación y tránsito de mercancías.
+    </p>
+  </section>
+
+  <section id="servicios">
+    <h2 id="t2">Servicios</h2>
+    <p id="p2">
+      Brindamos soluciones integrales en gestión logística internacional, asegurando control, eficiencia y cumplimiento durante todo el proceso.
+    </p>
+  </section>
+
+  <section id="nosotros">
+    <h2 id="t3">Quiénes Somos</h2>
+    <p id="p3">
+      NovaTrade Logistics acompaña a sus clientes como punto único de contacto en sus operaciones logísticas internacionales, ofreciendo asesoría y gestión profesional.
+    </p>
+  </section>
+
+  <section id="contacto">
+    <h2 id="t4">Contacto</h2>
+    <p id="p4">
+      Email: novaatradelogistics@gmail.com<br>
+      WhatsApp: (+502) 5471-8568
+    </p>
+  </section>
+
+</div>
+
+<footer>
+  © 2025 NovaTrade Logistics · Gestión logística internacional
+</footer>
+
+<script>
+  function langEN() {
+    document.getElementById("t1").innerText = "Welcome to NovaTrade Logistics";
+    document.getElementById("p1").innerText = "We are a company specialized in international logistics management, facilitating import, export and transit operations.";
+    document.getElementById("t2").innerText = "Services";
+    document.getElementById("p2").innerText = "We provide comprehensive international logistics management solutions.";
+    document.getElementById("t3").innerText = "About Us";
+    document.getElementById("p3").innerText = "NovaTrade Logistics acts as your single point of contact for international logistics operations.";
+    document.getElementById("t4").innerText = "Contact";
+  }
+
+  function langES() {
+    location.reload();
+  }
+
+  window.onload = function () {
+    window.scrollTo(0, 0);
+  };
+</script>
+
+</body>
+</html>
