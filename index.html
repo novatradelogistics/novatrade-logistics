@@ -14,6 +14,20 @@
       line-height: 1.6;
     }
 
+    /* ===== MARCA DE AGUA ===== */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("logo-novatrade.png") no-repeat center;
+      background-size: 400px;
+      opacity: 0.04;
+      z-index: -1;
+    }
+
     header {
       background-color: #ffffff;
       padding: 15px 40px;
@@ -25,18 +39,8 @@
       z-index: 100;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      font-size: 20px;
-      font-weight: bold;
-      color: #003366;
-    }
-
-    .logo svg {
-      width: 48px;
-      height: 48px;
-      margin-right: 12px;
+    header img {
+      height: 60px;
     }
 
     nav {
@@ -90,15 +94,8 @@
 <body>
 
 <header>
-  <div class="logo">
-    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <rect x="5" y="5" width="90" height="90" rx="12" fill="#003366"/>
-      <text x="50" y="60" text-anchor="middle" font-size="42" fill="#ffffff" font-family="Arial" font-weight="bold">
-        NT
-      </text>
-    </svg>
-    NovaTrade Logistics
-  </div>
+  <!-- LOGO PRINCIPAL -->
+  <img src="logo-novatrade.png" alt="NovaTrade Logistics">
 
   <nav>
     <a href="#inicio">Inicio</a>
@@ -117,7 +114,6 @@
     <h1 data-en="Welcome to NovaTrade Logistics">
       Bienvenidos a NovaTrade Logistics
     </h1>
-
     <p data-en="We are a company focused on providing efficient international logistics management solutions, acting as a single point of contact for our clients.">
       Somos una empresa enfocada en brindar soluciones eficientes en gestión logística internacional, actuando como un único punto de contacto para nuestros clientes.
     </p>
@@ -125,23 +121,20 @@
 
   <section id="servicios">
     <h2 data-en="Services">Servicios</h2>
-
-    <p data-en="We provide comprehensive international logistics management services for import, export, and transit operations, offering coordination, tracking, and advisory support throughout the process.">
+    <p data-en="We provide comprehensive international logistics management services for import, export and transit operations, offering coordination, monitoring and advisory throughout the process.">
       Ofrecemos servicios integrales de gestión logística internacional para operaciones de importación, exportación y tránsito, brindando coordinación, seguimiento y asesoría durante todo el proceso.
     </p>
   </section>
 
   <section id="nosotros">
     <h2 data-en="About Us">Quiénes Somos</h2>
-
-    <p data-en="NovaTrade Logistics supports companies and individuals in their international trade operations through professional, clear, and reliable management.">
+    <p data-en="NovaTrade Logistics supports companies and individuals in their international trade operations through professional, clear and reliable management.">
       NovaTrade Logistics acompaña a empresas y personas en sus operaciones de comercio internacional mediante una gestión profesional, clara y confiable.
     </p>
   </section>
 
   <section id="contacto">
     <h2 data-en="Contact">Contacto</h2>
-
     <p>
       <strong>Email:</strong> novaatradelogistics@gmail.com<br>
       <strong>WhatsApp:</strong> (+502) 5471-8568
@@ -150,8 +143,7 @@
 
 </div>
 
-<footer
-  data-en="© 2025 NovaTrade Logistics · International logistics management">
+<footer data-en="© 2025 NovaTrade Logistics · International logistics management">
   © 2025 NovaTrade Logistics · Gestión logística internacional
 </footer>
 
